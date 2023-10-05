@@ -1,12 +1,16 @@
 import { useState } from "react";
 
-function ListGroup() {
-  const items = ["New York", "San Fransisco", "Tokyo", "London", "Paris"];
+interface Props {
+  items: string[];
+  heading: string;
+}
+
+function ListGroup({ items, heading }: Props) {
   // using the useState hook we can tell the react app that this component can have data or state that will change overtime.
   const [selectedIndex, setSelectedIndex] = useState(-1);
   return (
     <>
-      <h1>List</h1>
+      <h1>{heading}</h1>
       {items.length === 0 && <h2>No Items Found</h2>}
       <ul className="list-group">
         {items.map((item, index) => (
