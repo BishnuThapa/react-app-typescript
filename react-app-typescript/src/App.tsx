@@ -3,6 +3,8 @@ import Alert from "./components/Alert";
 import Button from "./components/Button";
 import ListGroup from "./components/ListGroup";
 import Like from "./components/Like";
+import Navbar from "./components/Navbar";
+import Cart from "./components/Cart";
 
 function App() {
   const items = ["New York", "San Fransisco", "Tokyo", "London", "Paris"];
@@ -10,6 +12,11 @@ function App() {
   const handleSelectItem = (item: string) => {
     console.log(item);
   };
+  const [cartItems, setCartItems] = useState([
+    "Product1",
+    "Product2",
+    "Product3",
+  ]);
   return (
     <>
       {alertVisible && (
@@ -25,6 +32,8 @@ function App() {
         heading="Cities"
         onSelectItem={handleSelectItem}
       />
+      <Navbar cartItemsCount={cartItems.length} />
+      <Cart cartItems={cartItems} />
     </>
   );
 }
