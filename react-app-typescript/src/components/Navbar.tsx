@@ -4,8 +4,7 @@ interface Props {
 const Navbar = ({ cartItemsCount }: Props) => {
   return (
     <>
-      {" "}
-      <div>Navbar : {cartItemsCount} </div>;{" "}
+      <div>Navbar : {cartItemsCount} </div>
     </>
   );
 };

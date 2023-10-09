@@ -33,7 +33,7 @@ function App() {
         onSelectItem={handleSelectItem}
       />
       <Navbar cartItemsCount={cartItems.length} />
-      <Cart cartItems={cartItems} />
+      <Cart cartItems={cartItems} onClear={() => setCartItems([])} />
     </>
   );
 }
